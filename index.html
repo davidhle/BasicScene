@@ -24,7 +24,10 @@
       <a-torus position="0 10.25 -15" rotation="60 45 45" radius="5" color="red"></a-torus>
       <a-torus position="0 10.25 -15" rotation="60 45 45" radius="4" color="orange"></a-torus>
       <a-torus position="0 10.25 -15" rotation="60 45 45" radius="3" color="yellow"></a-torus>
-      <a-sphere position="0 10.25 -15" radius="3" color="#EF2D5E"></a-sphere>
+      <a-sphere position="0 10.25 -15" radius="3" color="#EF2D5E">
+        <a-animation attribute="position" begin="click" direction="alternate" dur="2000" repeat="indefinite"
+      to="0 10.45 -15"></a-animation>
+      </a-sphere>
       
       <!-- planet -->
       <a-torus position="30 10.25 -15" rotation="60 45 45" radius="5" color="red"></a-torus>
@@ -32,7 +35,8 @@
       <a-torus position="30 10.25 -15" rotation="60 45 45" radius="3" color="yellow"></a-torus>
       <a-sphere position="30 10.25 -15" radius="3" color="#EF2D5E"></a-sphere>
 
-      <a-text value="Welcome to Space!" color="#FAFAFA" position="-0.9 0.2 -3" scale="1.5 1.5 1.5"></a-text>
+      <a-text value="Welcome to Space!" color="#FAFAFA" position="-0.9 0.2 -3" scale="1.5 1.5 1.5">
+      </a-text>
       
       <a-camera>
         <a-cursor color="#FAFAFA"></a-cursor>

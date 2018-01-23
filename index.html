@@ -16,7 +16,7 @@
         <a-asset-item id="ship" src="scene.gltf"></a-asset-item>
       </a-assets>
       
-      <a-entity gltf-model="#tree" scale=" 0.1 0.1 0.1"></a-entity>
+      <a-entity gltf-model="#ship" position="0 2 -5" scale="0.1 0.1 0.1"></a-entity>
 
       <!-- planet -->
       <a-torus position="0 10.25 -15" rotation="60 45 45" radius="5" color="red"></a-torus>
@@ -31,13 +31,13 @@
       <a-sphere position="30 10.25 -15" radius="3" color="#EF2D5E"></a-sphere>
       
   
-      <a-box position="0 2 -5" rotation="0 45 45" scale="2 2 2" src="#boxTexture">
+<!--       <a-box position="0 2 -5" rotation="0 45 45" scale="2 2 2" src="#boxTexture">
         <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
           to="0 2.2 -5"></a-animation>
         <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
         <a-animation attribute="scale" begin="mouseenter" dur="300" to="2.3 2.3 2.3"></a-animation>
         <a-animation attribute="scale" begin="mouseleave" dur="300" to="2 2 2"></a-animation>
-      </a-box>
+      </a-box> -->
     
       
 

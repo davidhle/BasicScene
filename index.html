@@ -14,26 +14,49 @@
       <a-assets>
         <img id="boxTexture" src="https://image.freepik.com/free-vector/colorful-watercolor-triangles-pattern_23-2147662863.jpg">
         <img id="moonTexture" src="https://st.depositphotos.com/1017411/1565/i/950/depositphotos_15659203-stock-photo-seamless-texture-surface-of-the.jpg">
+        <img id="mercuryTexture" src="https://i.imgur.com/vb5C2RK.jpg">
+        <img id="venusTexture" src="https://i.imgur.com/2flerF5.jpg">
+        <img id="marsTexture" src="https://i.imgur.com/GqHD2RJ.jpg">
+        <img id="earthTexture" src="https://i.imgur.com/mnb5Agr.jpg">
+        <img id="jupiterTexture" src="https://i.imgur.com/AXpDdpb.jpg">
+        <img id="saturnTexture" src="https://i.imgur.com/fP9q1MT.jpg">
+        <img id="uranusTexture" src="https://i.imgur.com/4I8jk93.jpg">
+        <img id="neptuneTexture" src="https://i.imgur.com/5gTstCm.jpg">
       </a-assets>
+      
+      <a-sound src="https://ucarecdn.com/514cb51f-6b5e-484d-aa5f-f5572d3188b5/" autoplay="true"
+    position="-3 1 -4"></a-sound>
+
       
       <a-gltf-model src="scene.gltf" position="0.5 0.2 -5" rotation="0 180 0" scale="0.75 0.75 0.75">
         <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
       to="0.5 0.4 -5"></a-animation>
       </a-gltf-model>
 
-      <!-- planet -->
-      <a-torus position="0 10.25 -15" rotation="60 45 45" radius="5" color="red"></a-torus>
-      <a-torus position="0 10.25 -15" rotation="60 45 45" radius="4" color="orange"></a-torus>
-      <a-torus position="0 10.25 -15" rotation="60 45 45" radius="3" color="yellow"></a-torus>
-      <a-sphere position="0 10.25 -15" radius="3" color="#EF2D5E">
-        <a-animation attribute="rotation" begin="click" dur="2000" to="360 405 45"></a-animation>
-      </a-sphere>
+      <a-sphere src="#mercuryTexture" rotation="0 0 0" position = "-100 15 -45" radius = "1"></a-sphere>
+      <a-sphere src="#venusTexture" rotation="0 -60 0" position = "-80 15 -45" radius = "3"></a-sphere>
+      <a-sphere src="#earthTexture" rotation="0 -60 0" position = "-60 15 -45" radius = "3"></a-sphere>
+      <a-sphere src="#marsTexture" rotation="0 -60 0" position = "-40 15 -45" radius = "2"></a-sphere>
       
-      <!-- planet -->
-      <a-torus position="30 10.25 -15" rotation="60 45 45" radius="5" color="red"></a-torus>
-      <a-torus position="30 10.25 -15" rotation="60 45 45" radius="4" color="orange"></a-torus>
-      <a-torus position="30 10.25 -15" rotation="60 45 45" radius="3" color="yellow"></a-torus>
-      <a-sphere position="30 10.25 -15" radius="3" color="#EF2D5E"></a-sphere>
+      <!-- jupiter -->
+      <a-torus  position="-20 15 -45" rotation="60 45 45" radius="7" color="white"></a-torus>
+      <a-sphere src="#jupiterTexture" rotation="0 -60 0" position="-20 15 -45" radius="6" ></a-sphere>
+      
+      <!-- saturn -->
+      <a-torus position="0 15 -45" rotation="60 45 45" radius="9" color="green"></a-torus>
+      <a-torus position="0 15 -45" rotation="60 45 45" radius="8" color="purple"></a-torus>
+      <a-torus position="0 15 -45" rotation="60 45 45" radius="7" color="white"></a-torus>
+      <a-sphere src="#saturnTexture" rotation="0 -60 0" position="0 15 -45" radius="6"></a-sphere>
+
+
+    <!-- uranus -->
+
+      <a-torus position="20 15 -45" rotation="60 45 45" radius="4" color="white"></a-torus>
+
+      <a-sphere src="#uranusTexture" rotation="0 -60 0" position="20 15 -45" radius="5" ></a-sphere>
+    
+
+      <a-sphere src="#neptuneTexture" rotation="0 -60 0" position = "40 15 -45" radius = "5"></a-sphere>
 
       <!-- moon -->
       <a-sphere position="-7.555 6.090 -12" radius="2" src="#moonTexture">

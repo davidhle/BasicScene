@@ -27,7 +27,7 @@
       <a-sound src="https://ucarecdn.com/514cb51f-6b5e-484d-aa5f-f5572d3188b5/" autoplay="true"
     position="-3 1 -4"></a-sound>
 
-      
+
       <a-gltf-model src="scene.gltf" position="0.5 0.2 -5" rotation="0 180 0" scale="0.75 0.75 0.75">
         <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
       to="0.5 0.4 -5"></a-animation>
@@ -39,27 +39,45 @@
       <a-sphere src="#marsTexture" rotation="0 -60 0" position = "-40 15 -45" radius = "2"></a-sphere>
       
       <!-- jupiter -->
-      <a-torus  position="-20 15 -45" rotation="60 45 45" radius="7" color="white"></a-torus>
-      <a-sphere src="#jupiterTexture" rotation="0 -60 0" position="-20 15 -45" radius="6" ></a-sphere>
+      <a-torus  position="-20 15 -45" rotation="60 45 45" radius="7" color="white">
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-torus>
+      <a-sphere src="#jupiterTexture" rotation="0 -60 0" position="-20 15 -45" radius="6" >
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-sphere>
       
       <!-- saturn -->
-      <a-torus position="0 15 -45" rotation="60 45 45" radius="9" color="green"></a-torus>
-      <a-torus position="0 15 -45" rotation="60 45 45" radius="8" color="purple"></a-torus>
-      <a-torus position="0 15 -45" rotation="60 45 45" radius="7" color="white"></a-torus>
-      <a-sphere src="#saturnTexture" rotation="0 -60 0" position="0 15 -45" radius="6"></a-sphere>
+      <a-torus position="0 15 -45" rotation="60 45 45" radius="9" color="green">
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-torus>
+      <a-torus position="0 15 -45" rotation="60 45 45" radius="8" color="purple">
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-torus>
+      <a-torus position="0 15 -45" rotation="60 45 45" radius="7" color="white">
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-torus>
+      <a-sphere src="#saturnTexture" rotation="0 -60 0" position="0 15 -45" radius="6">
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-sphere>
 
 
     <!-- uranus -->
 
-      <a-torus position="20 15 -45" rotation="60 45 45" radius="4" color="white"></a-torus>
+      <a-torus position="20 15 -45" rotation="60 45 45" radius="4" color="white">
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-torus>
 
-      <a-sphere src="#uranusTexture" rotation="0 -60 0" position="20 15 -45" radius="5" ></a-sphere>
+      <a-sphere src="#uranusTexture" rotation="0 -60 0" position="20 15 -45" radius="5" >
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-sphere>
     
 
-      <a-sphere src="#neptuneTexture" rotation="0 -60 0" position = "40 15 -45" radius = "5"></a-sphere>
+      <a-sphere src="#neptuneTexture" rotation="0 -60 0" position = "40 15 -45" radius = "5">
+        <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
+      </a-sphere>
 
       <!-- moon -->
-      <a-sphere position="-7.555 6.090 -12" radius="2" src="#moonTexture">
+      <a-sphere position="-7.555 6.090 -12" radius="0.1" src="#moonTexture">
         <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>
       </a-sphere>
 

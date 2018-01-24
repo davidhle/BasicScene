@@ -1,4 +1,5 @@
-#AFrame Milky Way Scene
+# AFrame Milky Way Scene
+
 [@rajusajja](https://github.com/rajusajja) and I created a simple scene using AFrame where we incorporated
 spheres and toruses textured to represent planets in the solar system, with
 a 360 panoramic photo of the Milky Way as the background.

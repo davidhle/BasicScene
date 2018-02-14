@@ -7,9 +7,16 @@
     <script src="https://unpkg.com/aframe-environment-component@1.0.0/dist/aframe-environment-component.min.js"></script>
   </head>
   <body>
-    <!-- Try changing the preset to one of default, contact, egypt, checkerboard, forest, goaland, yavapai, goldmine, 
-         threetowers, poison, arches, tron, japan, dream, volcano, starry, osiris. -->
-    <!-- See more environment options: https://github.com/feiss/aframe-environment-component#parameters -->
+    <script>
+      AFRAME.registerComponent('Spaceship', {
+        schema: {
+          message: {type:'string', default: 'Rendering spaceship!'}
+        },
+        init: function () {
+          console.log(this.message);
+        }
+      });
+    </script>
     <a-scene>
       <a-assets>
         <img id="boxTexture" src="https://image.freepik.com/free-vector/colorful-watercolor-triangles-pattern_23-2147662863.jpg">
@@ -24,14 +31,17 @@
         <img id="neptuneTexture" src="https://i.imgur.com/5gTstCm.jpg">
       </a-assets>
       
-      <a-sound src="https://ucarecdn.com/514cb51f-6b5e-484d-aa5f-f5572d3188b5/" autoplay="true"
-    position="-3 1 -4"></a-sound>
+      <!-- <a-sound src="https://ucarecdn.com/514cb51f-6b5e-484d-aa5f-f5572d3188b5/" autoplay="true"
+    position="-3 1 -4"></a-sound> -->
+      <a-sound src="SpaceIvaders.mp3" autoplay="true"
+        position="-3 1 -4"></a-sound>
 
-
-      <a-gltf-model src="scene.gltf" position="0.5 0.2 -5" rotation="0 180 0" scale="0.75 0.75 0.75">
-        <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
-      to="0.5 0.4 -5"></a-animation>
-      </a-gltf-model>
+      <a-entity Spaceship>
+        <a-gltf-model src="scene.gltf" position="0.5 0.2 -5" rotation="0 180 0" scale="0.75 0.75 0.75">
+          <a-animation attribute="position" direction="alternate" dur="2000" repeat="indefinite"
+          to="0.5 0.4 -5"></a-animation>
+        </a-gltf-model>
+      </a-entity>
 
       <a-sphere src="#mercuryTexture" rotation="0 0 0" position = "-100 15 -45" radius = "1">
         <a-animation attribute="scale" begin="click" dur="2000" to="0 0 0"></a-animation>

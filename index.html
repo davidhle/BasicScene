@@ -8,15 +8,48 @@
   </head>
   <body>
     <script>
-      AFRAME.registerComponent('Spaceship', {
-        schema: {
-          message: {type:'string', default: 'Rendering spaceship!'}
-        },
-        init: function () {
-          console.log(this.data.message);
-        }
-      });
-    </script>
+var coordinates = AFRAME.utils.coordinates;
+AFRAME.registerComponent('line', {
+  schema: {
+    color: { default: '#000' },
+    path: {
+      default: [
+        { x: -0.5, y: 0, z: 0 },
+        { x: 0.5, y: 0, z: 0 }
+      ],
+
+      // Deserialize path in the form of comma-separated vec3s: `0 0 0, 1 1 1, 2 0 3`.
+      parse: function (value) {
+        return value.split(',').map(coordinates.parse);
+      },
+
+      // Serialize array of vec3s in case someone does setAttribute('line', 'path', [...]).
+      stringify: function (data) {
+        return data.map(coordinates.stringify).join(',');
+      }
+    }
+  },
+  
+  update: function () {
+    var material = new THREE.LineBasicMaterial({
+        color: this.data.color
+    });
+
+    var geometry = new THREE.Geometry();
+    this.data.path.forEach(function (vec3) {
+      geometry.vertices.push(
+        new THREE.Vector3(vec3.x, vec3.y, vec3.z)
+      );
+    });
+
+    this.el.setObject3D('mesh', new THREE.Line(geometry, material));
+  },
+  
+  remove: function () {
+    this.el.removeObject3D('mesh');
+  }
+});
+</script>
     <a-scene>
       <a-assets>
         <img id="moonTexture" src="https://st.depositphotos.com/1017411/1565/i/950/depositphotos_15659203-stock-photo-seamless-texture-surface-of-the.jpg">
@@ -30,6 +63,12 @@
         <img id="neptuneTexture" src="https://i.imgur.com/5gTstCm.jpg">
       </a-assets>
       
+        <a-entity id="happy" position="0 2 -10">
+    <a-entity mixin="red" line="path: -1 1 0, -1 0.5 0, -1 0 0"></a-entity>
+    <a-entity mixin="red" line="path: 1 1 0, 1 0.5 0, 1 0 0"></a-entity>
+    <a-entity mixin="red" line="path: -2 -1 0, 0 -2 0, 2 -1"></a-entity> 
+  </a-entity>
+
       <!-- <a-sound src="https://ucarecdn.com/514cb51f-6b5e-484d-aa5f-f5572d3188b5/" autoplay="true"
     position="-3 1 -4"></a-sound> -->
       <a-sound src="SpaceInvaders.mp3" autoplay="true" loop="true"

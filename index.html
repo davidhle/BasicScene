@@ -8,47 +8,47 @@
   </head>
   <body>
     <script>
-var coordinates = AFRAME.utils.coordinates;
-AFRAME.registerComponent('line2', {
-  schema: {
-    color: { default: '#fff00' },
-    path: {
-      default: [
-        { x: -0.5, y: 0, z: 0 },
-        { x: 0.5, y: 0, z: 0 }
-      ],
+        var coordinates = AFRAME.utils.coordinates;
+        AFRAME.registerComponent('star', {
+          schema: {
+            color: { default: '#ffff00' },
+           path: {
+             default: [
+               { x: -0.5, y: 0, z: 0 },
+                { x: 0.5, y: 0, z: 0 }
+              ],
 
-      // Deserialize path in the form of comma-separated vec3s: `0 0 0, 1 1 1, 2 0 3`.
-      parse: function (value) {
-        return value.split(',').map(coordinates.parse);
-      },
+             // Deserialize path in the form of comma-separated vec3s: `0 0 0, 1 1 1, 2 0 3`.
+              parse: function (value) {
+               return value.split(',').map(coordinates.parse);
+             },
 
-      // Serialize array of vec3s in case someone does setAttribute('line', 'path', [...]).
-      stringify: function (data) {
-        return data.map(coordinates.stringify).join(',');
-      }
-    }
-  },
+             // Serialize array of vec3s in case someone does setAttribute('line', 'path', [...]).
+             stringify: function (data) {
+                return data.map(coordinates.stringify).join(',');
+             }
+            }
+         },
   
-  update: function () {
-    var material = new THREE.LineBasicMaterial({
-        color: this.data.color
-    });
+         update: function () {
+            var material = new THREE.LineBasicMaterial({
+                color: this.data.color
+            });
 
-    var geometry = new THREE.Geometry();
-    this.data.path.forEach(function (vec3) {
-      geometry.vertices.push(
-        new THREE.Vector3(vec3.x, vec3.y, vec3.z)
-      );
-    });
+            var geometry = new THREE.Geometry();
+            this.data.path.forEach(function (vec3) {
+              geometry.vertices.push(
+                new THREE.Vector3(vec3.x, vec3.y, vec3.z)
+              );
+            });
 
-    this.el.setObject3D('mesh', new THREE.Line(geometry, material));
-  },
+           this.el.setObject3D('mesh', new THREE.Line(geometry, material));
+         },
   
-  remove: function () {
-    this.el.removeObject3D('mesh');
-  }
-});
+         remove: function () {
+            this.el.removeObject3D('mesh');
+          }
+        });
 </script>
     <a-scene>
       <a-assets>
@@ -63,11 +63,11 @@ AFRAME.registerComponent('line2', {
         <img id="neptuneTexture" src="https://i.imgur.com/5gTstCm.jpg">
       </a-assets>
       
-        <a-entity id="happy" position="0 2 -10">
-    <a-entity line2="path: -1 1 0, -1 0.5 0, -1 0 0"></a-entity>
-    <a-entity line2="path: 1 1 0, 1 0.5 0, 1 0 0"></a-entity>
-    <a-entity line2="path: -2 -1 0, 0 -2 0, 2 -1"></a-entity> 
-  </a-entity>
+        <a-entity id="star" position="0 2 -10">
+            <a-entity star="path: -1 1 0, -1 0.5 0, -1 0 0"></a-entity>
+            <a-entity star="path: 1 1 0, 1 0.5 0, 1 0 0"></a-entity>
+            <a-entity star="path: -2 -1 0, 0 -2 0, 2 -1"></a-entity> 
+        </a-entity>
 
       <!-- <a-sound src="https://ucarecdn.com/514cb51f-6b5e-484d-aa5f-f5572d3188b5/" autoplay="true"
     position="-3 1 -4"></a-sound> -->
